@@ -43,7 +43,7 @@ const Cart = () => {
   const buttonCheckout = () => {
     return (
       <div className='col'>
-        <Link to="/checkout">Proceed to Checkout</Link>
+        <Link to="/checkout" className='checkout'>Proceed to Checkout</Link>
       </div>
     );
   };

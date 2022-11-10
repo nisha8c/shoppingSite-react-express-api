@@ -81,3 +81,24 @@
 .footer a:hover {
   color: #E0DBF2;
 }
+
+.checkout .row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.checkout .row .col .formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.checkout .row .col .middlecol .right {
+  flex-direction: column;
+}
+
+.checkout .row .col .middlecol .right h3 {
+  font-size: 30px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
