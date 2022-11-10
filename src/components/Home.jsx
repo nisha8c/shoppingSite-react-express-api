@@ -3,7 +3,7 @@ import Products from './Products';
 const Home = () => {
   return (
     <div className='home'>
-      <img src="./images/depositphotos_11663757-stock-photo-man-in-suit.jpeg" alt='HomeImage' />
+      Welcome to Home Page..................
       New Arrivals
       Checkout All the Trends...
       <Products />
