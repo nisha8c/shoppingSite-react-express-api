@@ -22,7 +22,6 @@ const Product = () => {
         .then(response => response.json())  
         .then(result => {
             const fetchedProduct = result;
-            console.log('getting results:',fetchedProduct);
             setProduct(fetchedProduct);
             setLoading(false)
         });
@@ -40,11 +39,9 @@ const Product = () => {
   };
 
   const ShowProduct = () => {
-    console.log('show product:: ', product);
     return (
       <>
         <div className='col'>
-          checking...
           <img src={product.image} alt={product.title} />
         </div>
         <div className='col'>

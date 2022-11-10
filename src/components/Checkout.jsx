@@ -10,10 +10,10 @@ const Checkout = () => {
   const itemList = (item) => {
     total = total + item.price;
     return (
-      <div className='tootalContent'>
+      <li className='tootalContent' key={item.id}>
         <p>{item.title}</p>
         <span>{item.price}</span>
-      </div>
+      </li>
     );
   };
 
@@ -46,9 +46,9 @@ const Checkout = () => {
           <div className='col'>
             <div className='totalCart'>
               <h2>Your Cart <span>{state.length}</span></h2>
-              <div className='totalInfo'>
+              <ul className='totalInfo'>
                 {state.map(itemList)}
-              </div>
+              </ul>
 
               <div className='total'>
                 <p>Total: </p>

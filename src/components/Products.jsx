@@ -45,11 +45,10 @@ const Products = () => {
           <button className='btn' type='submit' onClick={() => filterProduct('jewelery')}>Jewel</button>
           <button className='btn' type='submit' onClick={() => filterProduct('electronics')}>Electronics</button>
         </div>
+        <ul className='cards'>
         {filter.map((product) => {
           return (
-            <>
-              <div className='cards' key={product.id}>
-                <div className='card'>
+                <li className='card' key={product.id}>
                   <div className='card-header'>
                     <img src={product.image} alt={product.title} />
                   </div>
@@ -63,11 +62,10 @@ const Products = () => {
                   <div className='card-footer'>
                     <Link to={`/products/${product.id}`} className='buyNow'>Buy Now</Link>
                   </div>
-                </div>
-              </div>
-            </>
+                </li>
           );
         })}
+        </ul>
       </>
     );
   };
