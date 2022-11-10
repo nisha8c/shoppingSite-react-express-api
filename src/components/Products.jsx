@@ -6,13 +6,9 @@ const Products = () => {
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(data);
 
-  console.log('filter: ', filter);
-
-
   useEffect(() => {
     const getProducts = async () =>{
       setLoading(true);
-       // const response = await fetch('https://fakestoreapi.com/products');
        await fetch('http://localhost:5000/')
         .then(response => response.json())
         .then(result => {

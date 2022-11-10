@@ -6,9 +6,14 @@ const Home = () => {
   return (
     <div className='home'>
       <img src={manInSuit} alt="manInSuit"/>
-      Welcome to Home Page..................
-      New Arrivals
-      Checkout All the Trends...
+      <div>
+        Welcome to Home Page..................
+      </div>
+      <hr />
+      <p>
+        New Arrivals
+        Checkout All the Trends...
+      </p>
       <Products />
     </div>
   );

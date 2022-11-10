@@ -1,15 +1,14 @@
-import React from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
+// import { response } from 'express';
+import React,  { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { addCart } from '../redux/action';
 
 const Product = () => {
-
   const { id } = useParams();
-  const { product, setProduct } = useState([]);
-  const { loading, setLoading } = useState(false);
+  const [data, setData] = useState([]);
+  const [product, setProduct] = useState(data);
+  const [loading, setLoading] = useState(data);
 
   const dispatch = useDispatch();
   const addProduct = (product) => {
@@ -19,25 +18,29 @@ const Product = () => {
   useEffect(() => {
     const getProduct = async () =>{
       setLoading(true);
-      const response = await fetch(`http://localhost:5000/products/${id}`);  
-      setProduct(await response.json());
-      setLoading(false);
+       await fetch(`http://localhost:5000/products/${id}`)
+        .then(response => response.json())  
+        .then(result => {
+            const fetchedProduct = result;
+            console.log('getting results:',fetchedProduct);
+            setProduct(fetchedProduct);
+            setLoading(false)
+        });
     }
     
-    getProduct();
-  },[id, setLoading, setProduct]);
-
-
+     getProduct();
+  }, [id]);
+  
   const Loading = () => {
     return (
       <>
-        <p className='loading'>Loading......</p>
+        <p className='loading'>Loading Product......</p>
       </>
     );
   };
 
   const ShowProduct = () => {
-    console.log('product:: ', product);
+    console.log('show product:: ', product);
     return (
       <>
         <div className='col'>
@@ -58,8 +61,11 @@ const Product = () => {
 
   return (
     <div className='product'>
-      {!product ? <Loading /> : <ShowProduct />}
-    </div>
+      <h1>Product Details</h1><hr/>
+      <div className='display-product'>
+        {!Loading ? <Loading /> : <ShowProduct /> }
+     </div>
+  </div>
   );
 };
 
