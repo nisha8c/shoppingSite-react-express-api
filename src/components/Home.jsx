@@ -5,7 +5,7 @@ import manInSuit from './images/depositphotos_11663757-stock-photo-man-in-suit.j
 const Home = () => {
   return (
     <div className='home'>
-      <img src={manInSuit} alt="manInSuit"/>
+      <img src={manInSuit} alt="manInSuit" className='hero'/>
       <div>
         Welcome to Home Page..................
       </div>

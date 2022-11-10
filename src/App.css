@@ -1,4 +1,8 @@
-.home .img {
+.home {
+  width: 100%;
+}
+
+.home .hero {
   width: 100%;
 }
 
