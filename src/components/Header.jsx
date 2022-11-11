@@ -23,7 +23,7 @@ const Header = () => {
       </div>
       
       <nav className='nav'>
-          <ul>
+          <ul className='nav-ul'>
             <li>
               <Link to='/'>Home</Link>
             </li>

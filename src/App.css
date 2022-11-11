@@ -1,9 +1,26 @@
+*{
+  margin: 0;
+  padding:0
+}
 .home {
   width: 100%;
 }
 
 .home .hero {
   width: 100%;
+}
+
+.header .topDiv .buttons{
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-ul
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
 }
 
 .products .buttons .btn {
@@ -21,6 +38,7 @@
   grid-template-columns: repeat(4, 1fr);
   padding: 5px;
   justify-items: center;
+  list-style: none;
 }
 
 .products .cards .card {
